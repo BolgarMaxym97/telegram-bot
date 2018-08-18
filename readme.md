@@ -13,6 +13,7 @@
 - Add .env file
 - php artisan vendor:publish --all
 - php artisan key:generate
+- php artisan migrate --seed
 - php artisan ide-helper:generate
 
 

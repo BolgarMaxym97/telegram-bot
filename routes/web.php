@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/bot', 'BotController@index');
+Route::get('/bot-message', 'BotController@message');
+
+Auth::routes();
+
+Route::match(['GET', 'POST'], 'register', function () {
+    Auth::logout();
+    return redirect('/');
+})->name('register');
+
+Route::get('/home', 'HomeController@index')->name('home');
